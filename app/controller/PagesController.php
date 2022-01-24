@@ -9,8 +9,8 @@ class PagesController extends Controller {
     public function home(){
         $this->load('home/main');
     }
-    public function cep(){
-        $this->load('cep/main',[
+    public function produto(){
+        $this->load('produto/main',[
             'nome' => 'RRVC'
         ]);
     }
