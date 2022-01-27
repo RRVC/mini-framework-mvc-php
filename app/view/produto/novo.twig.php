@@ -4,14 +4,14 @@
 
 {% block body%}
 
-<div class="max-width center-screen bg-white padding">
+<div class="max-width center-screen bg-white padding mt-5">
     <h1>Novo Produto</h1>
 
     <form action="{{BASE}}insert-produto" method="POST">
 
     <div class="mt-3">
-        <label for="txtTitulo">Nome do Produto</label>
-        <input type="text" id="txtTitulo" name="txtTitulo" class="form-control" placeholder="Placa de Vídeo" required>
+        <label for="txtNome">Nome do Produto</label>
+        <input type="text" id="txtNome" name="txtNome" class="form-control" placeholder="Placa de Vídeo" required>
     </div>
 
     <div class="mt-3">

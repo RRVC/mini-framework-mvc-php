@@ -1,4 +1,8 @@
 <?php
+
+namespace app\Core;
+use PDO;
+
 /**
  * PDO PHP Persistence Class
  * https://github.com/victortassinari/pdophpclass
@@ -6,7 +10,7 @@
  *
  * @author Victor Tassinari - victortassinarix@gmail.com
  */
-class Database {
+class Model {
 
     private static $connection;
     private $debug;
@@ -16,9 +20,9 @@ class Database {
     private $database;
 
     public function __construct() {
-            $this->debug = true;
-            $this->server = DB_HOST;
-            $this->user = DB_USER;
+            $this->debug    = true;
+            $this->server   = DB_HOST;
+            $this->user     = DB_USER;
             $this->password = DB_PASS;
             $this->database = DB_NAME;
     }
@@ -36,10 +40,8 @@ class Database {
             }
             return self::$connection;
         } catch (\PDOException $ex) {
-            if ($this->debug) {
+            if ($this->debug)
                 echo "<b>Error on getConnection(): </b>" . $ex->getMessage() . "<br/>";
-            }
-            die();
             return null;
         }
     }
@@ -101,7 +103,6 @@ class Database {
                 print_r($params) . "<br />";
                 ;
             }
-            die();
             return null;
         }
     }
@@ -126,7 +127,6 @@ class Database {
                 print_r($params) . "<br />";
                 ;
             }
-            die();
             return null;
         }
     }
@@ -151,7 +151,6 @@ class Database {
                 print_r($params) . "<br />";
                 ;
             }
-            die();
             return false;
         }
     }
